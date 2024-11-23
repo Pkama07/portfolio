@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
-import { Space_Mono } from 'next/font/google'
 import { cn } from '@/app/lib/utils'
+import localFont from 'next/font/local'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -8,10 +8,14 @@ export const metadata: Metadata = {
     description: 'Personal website',
 }
 
-const sm = Space_Mono({
-    weight: '400',
-    subsets: ['latin'],
-    display: 'swap',
+const menlo = localFont({
+    src: [
+        {
+            path: './fonts/Menlo-Regular.ttf',
+            weight: '400',
+            style: 'normal',
+        },
+    ],
 })
 
 export default function RootLayout({
@@ -21,7 +25,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={cn(sm.className, 'mx-44 bg-theme')}>{children}</body>
+            <body className={cn(menlo.className, 'mx-44 bg-theme')}>{children}</body>
         </html>
     )
 }
