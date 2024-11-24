@@ -1,10 +1,11 @@
 import GitHubCalendar from '@/components/GitHubCalendar'
 
-export default function Summary() {
+export default function SummarySection() {
     return (
-        <div className="flex w-full border border-green-400">
-            <p className="w-1/3">
-                I'm a junior at Purdue University studying Computer Science and Math. I'm currently working on{' '}
+        <div className="flex flex-col w-full items-start gap-4">
+            <p>
+                I'm a junior at Purdue University studying Computer Science and Math and an incoming SWE intern at
+                Palantir. I'm currently working on{' '}
                 <a href="https://www.jumpseatapp.com/" className="underline" target="_blank">
                     Jumpseat
                 </a>
@@ -22,7 +23,7 @@ export default function Summary() {
                 </a>
                 .
             </p>
-            <GitHubCalendar className="w-2/3" />
+            <GitHubCalendar className="border border-red-400" />
         </div>
     )
 }
